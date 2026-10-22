@@ -28,8 +28,8 @@ const server = http.createServer((req, res) => {
     <title>BMH231 Web Programlama</title>
 </head>
 <body>
-    <h1>BMH231 Web Programlama</h1>
-    <p>Web Programlama Ödev 1 sunucusuna hoş geldiniz. Ben Esra Yıldırım 2.Sınıf öğrencisiyim. Kitap okumayı seviyorum.</p>
+    <h1>BMH231 Web Programlama Ödevi</h1>
+    <p>Web Programlama Ödev 1 sunucusuna hoş geldiniz. Ben Esra Yıldırım 2.Sınıf öğrencisiyim. Kitap okumayı seviyorum. Fenerbahçeliyim.</p>
     <a href="/hakkimda">Hakkımda</a>
 </body>
 </html>`);
