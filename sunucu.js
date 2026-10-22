@@ -29,7 +29,7 @@ const server = http.createServer((req, res) => {
 </head>
 <body>
     <h1>BMH231 Web Programlama</h1>
-    <p>Web Programlama Ödev 1 sunucusuna hoş geldiniz.</p>
+    <p>Web Programlama Ödev 1 sunucusuna hoş geldiniz. Ben Esra Yıldırım 2.Sınıf öğrencisiyim. Kitap okumayı seviyorum.</p>
     <a href="/hakkimda">Hakkımda</a>
 </body>
 </html>`);
