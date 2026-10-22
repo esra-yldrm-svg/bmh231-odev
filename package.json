@@ -1,0 +1,12 @@
+{
+  "name": "bmh231-odev1",
+  "version": "1.0.0",
+  "description": "BMH231 Web Programlama Ödev 1",
+  "main": "sunucu.js",
+  "scripts": {
+    "start": "node sunucu.js"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.18"
+  }
+}
