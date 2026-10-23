@@ -1,44 +1,49 @@
-BMH231 – WEB PROGRAMLAMA
+﻿BMH231 – WEB PROGRAMLAMA
 ÖDEV 1 – Web’in Temelleri ve Geliştirme Ekosistemi
 
-Ad Soyad: Mustafa Melih Karabulut
-Öğrenci No: ______________________
-GitHub Deposu: https://github.com/KULLANICI_ADIN/bmh231-odev1
+Ad Soyad: Esra Yıldırım
+Öğrenci No: 16008125057
+GitHub Deposu: https://github.com/esra-yldrm-svg/bmh231-odev1
 
 BÖLÜM A – KAVRAMSAL SORULAR
+A1) İnternet ve WWW arasındaki fark nedir?
+İnternet, dünya genelindeki bilgisayarların ve ağların birbirine bağlandığı geniş bir iletişim altyapısıdır. WWW (World Wide Web) ise internet üzerinden erişilen web sayfaları ve web sitelerinden oluşan bir hizmettir. Yani WWW, internetin kendisi değil, internet üzerinde çalışan hizmetlerden biridir.
 
-A1. İnternet, Web ve Katmanlar
-İnternet, bilgisayarların ve diğer cihazların birbirleriyle iletişim kurmasını sağlayan küresel ağ altyapısıdır. World Wide Web ise internet üzerinde çalışan ve web sayfalarına erişmemizi sağlayan hizmetlerden biridir. Web dışında internet üzerinde çalışan iki hizmet e-posta ve FTP'dir.
+İnternet üzerinden sunulan diğer hizmetlere e-posta ve FTP örnek verilebilir. E-posta elektronik mesajların gönderilip alınmasını, FTP ise dosyaların aktarılmasını sağlar.
 
-Bir web uygulaması genel olarak üç katmandan oluşur: sunum katmanı, uygulama katmanı ve veri katmanı. Sunum katmanında HTML, CSS ve JavaScript; istemci-sunucu iletişiminde HTTP/HTTPS; veri katmanında ise veritabanına uygun sorgu ve iletişim yöntemleri kullanılır.
+Web uygulamalarında farklı katmanlar bulunur. Sunum katmanı kullanıcıya görünen arayüzü oluşturur ve HTML, CSS ile JavaScript kullanır. Uygulama katmanı gelen istekleri işler ve gerekli işlemleri gerçekleştirir. Veri katmanı ise bilgilerin saklanmasını ve gerektiğinde erişilmesini sağlar. Bu katmanlar arasında HTTP/HTTPS gibi protokollerle iletişim kurulur.
+A2) Statik ve dinamik web sayfaları arasındaki fark nedir? LAMP ve MERN nedir?
+Statik web sayfalarında içerik genellikle önceden hazırlanmıştır ve her kullanıcıya aynı içerik sunulur. Örneğin yalnızca ad, iletişim bilgileri ve projelerden oluşan basit bir kişisel tanıtım sayfası statik olabilir.
 
-A2. Statik/Dinamik İçerik ve Teknoloji Yığını
-Statik içerik, sunucuda önceden hazırlanmış ve genellikle her kullanıcıya aynı şekilde gönderilen içeriktir. Örneğin basit bir HTML tanıtım sayfası statiktir. Dinamik içerik, isteğe veya veritabanındaki bilgilere göre oluşturulur. Örneğin alışveriş sitesindeki kişiye özel sepet bilgileri dinamiktir.
+Dinamik web sayfalarında ise içerik kullanıcıya, veri tabanındaki bilgilere veya yapılan işlemlere göre değişebilir. Örneğin kullanıcı girişi yapılan, ürünlerin listelendiği veya sipariş verilen bir e-ticaret sitesi dinamik bir web uygulamasıdır.
 
-LAMP: Linux, Apache, MySQL, PHP.
-MERN: MongoDB, Express.js, React, Node.js.
-Temel fark, LAMP'ın PHP/MySQL tabanlı, MERN'in ise JavaScript/Node.js ve MongoDB ekosistemine dayalı olmasıdır.
+LAMP; Linux işletim sistemi, Apache web sunucusu, MySQL veri tabanı ve PHP programlama dilinden oluşur. MERN ise MongoDB, Express.js, React ve Node.js bileşenlerini içerir. LAMP yapısında PHP yaygın olarak sunucu tarafında kullanılırken MERN yapısında JavaScript hem sunucu hem de istemci tarafında kullanılabilir. Bu nedenle MERN, JavaScript temelli uygulama geliştirmeyi kolaylaştırır.
+A3) Verilen URL'yi bileşenlerine ayırınız.
+Verilen URL:
 
-A3. URL Çözümleme
 https://api.ornek.com.tr:8443/v1/urunler?kategori=kitap&sirala=fiyat#yorumlar
 
-Şema: https
-Ana makine: api.ornek.com.tr
-Port: 8443
-Yol: /v1/urunler
-Sorgu: kategori=kitap&sirala=fiyat
-Parça: yorumlar
+Bu URL'nin bileşenleri aşağıdaki gibidir:
+- Protokol (şema): https
+- Alan adı (host): api.ornek.com.tr
+- Port: 8443
+- Yol (path): /v1/urunler
+- Sorgu parametreleri (query): kategori=kitap&sirala=fiyat
+- Parça (fragment): yorumlar
+Fragment bölümü, tarayıcının sayfa içindeki belirli bir bölüme yönelmesini sağlar. #yorumlar kısmı HTTP isteğinde sunucuya gönderilmez; tarayıcı tarafından değerlendirilir.
 
-kategori=kitap ürün kategorisini, sirala=fiyat ise sonuçların fiyata göre sıralanmasını belirtir. Fragment (#yorumlar) sunucuya gönderilmez; tarayıcı tarafından kullanılır. 8443 portunun açıkça yazılması, standart HTTPS portu olan 443 yerine farklı bir port kullanıldığını belirtir.
+HTTPS için varsayılan port 443'tür. URL'de 8443 portunun açıkça belirtilmesinin nedeni, bağlantının varsayılan port yerine bu özel port üzerinden kurulmasını istemesidir.
+A4) DNS nasıl çalışır? A, CNAME ve TTL kavramlarını açıklayınız.
+DNS (Domain Name System), alan adlarını IP adreslerine dönüştürerek kullanıcıların web sitelerine kolayca erişmesini sağlar. Kullanıcı www.bozok.edu.tr adresini tarayıcıya yazdığında bilgisayar, bu alan adının IP adresini öğrenmek için DNS sorgusu yapar.
 
-A4. DNS
-Önbelleklerde kayıt olmadığı varsayımında istemci DNS çözümleyicisine başvurur. Özyinelemeli çözümleyici kök DNS sunucularından .tr alanından sorumlu sunucuları öğrenir; ardından .tr sunucusundan bozok.edu.tr alanından sorumlu yetkili sunucuları bulur ve son olarak yetkili sunucudan www.bozok.edu.tr kaydını sorar. Sonuç IP adresidir.
-
-TTL, DNS kaydının önbellekte ne kadar süre tutulabileceğini belirtir. A kaydı alan adını IPv4 adresine, CNAME ise bir alan adını başka bir alan adına eşler.
-
-A5. HTTP İstek Yapısı ve Durumsuzluk
-Örnek POST isteği:
-
+Sorguyu alan özyinelemeli DNS çözümleyicisi (recursive resolver), gerekli bilgiyi önbelleğinde bulamazsa DNS hiyerarşisindeki sunuculara başvurur. Kök DNS sunucusu ilgili üst düzey alan adına yönlendirme yapar. Ardından .tr alan adıyla ilgili DNS sunucularından ve alan adının yetkili DNS sunucusundan gerekli kayıtlar öğrenilir. Sonuçta alan adının hangi IP adresine karşılık geldiği bulunur.
+- A kaydı: Alan adını bir IPv4 adresine yönlendirir.
+- AAAA kaydı: Alan adını bir IPv6 adresine yönlendirir.
+- CNAME kaydı: Bir alan adını başka bir alan adına takma ad olarak yönlendirir.
+- TTL (Time To Live): DNS kaydının önbellekte ne kadar süre tutulabileceğini belirtir.
+TTL süresi dolmadan önbellekteki kayıt kullanılabilir. Süre dolduğunda kayıt yeniden sorgulanabilir. Bu mekanizma DNS sorgularının daha hızlı yapılmasına ve DNS sunucularının yükünün azaltılmasına yardımcı olur.
+A5) Verilen bilgilere göre HTTP POST isteği yazınız.
+İstemcinin ogrenci.ornek.edu.tr sunucusundaki /api/dersler adresine {"kod":"BMH231"} JSON verisini gönderdiğini varsayalım.
 POST /api/dersler HTTP/1.1
 Host: ogrenci.ornek.edu.tr
 Content-Type: application/json
@@ -46,234 +51,79 @@ Content-Length: 16
 
 {"kod":"BMH231"}
 
-HTTP'nin durumsuz olması, sunucunun bir isteği kendiliğinden önceki isteklerle ilişkilendirmemesi anlamına gelir. Oturum yönetiminde sunucu Set-Cookie ile bir çerez gönderir; tarayıcı sonraki isteklerde Cookie başlığıyla bu çerezi geri gönderir. Sunucu böylece oturumu ilişkilendirebilir.
 
-A6. Durum Kodları
-a) 201 Created
-b) 401 Unauthorized
-c) 200 OK
-d) 301 Moved Permanently
-e) 304 Not Modified
-f) 404 Not Found
-g) 500 Internal Server Error
-h) 503 Service Unavailable
-
-A7. HTTP Yöntemleri
-GET: güvenli, eş etkili
-POST: güvenli değil, eş etkili değil
-PUT: güvenli değil, eş etkili
-DELETE: güvenli değil, eş etkili
-
-Siparişi Tamamla gibi durum değiştiren bir işlem POST ile yapılıyorsa sayfa yenilendiğinde aynı POST isteğinin yeniden gönderilmesi gerekebilir. Tarayıcı bu nedenle kullanıcıyı uyarabilir. PUT genellikle bir kaynağın tamamını değiştirmek, PATCH ise kaynağın belirli bir bölümünü değiştirmek için kullanılır.
-
-A8. HTTPS ve TLS
-HTTPS; gizlilik, bütünlük ve sunucu kimliğinin doğrulanmasına yardımcı olur. Sertifika otoritesi sunucunun sertifikasını imzalar ve tarayıcının sertifikaya güvenmesine yardımcı olur. TLS el sıkışmasında ortak gizli anahtar düz metin olarak ağ üzerinden gönderilmez; güvenli anahtar oluşturma/değiştirme mekanizmaları kullanılır. Kilit simgesi sitenin mutlaka güvenilir veya iyi niyetli olduğunu göstermez; bağlantının TLS ile korunması ve sertifikanın doğrulanması hakkında bilgi verir.
-
-A9. Tarayıcının Çalışma Mantığı
-Verilen HTML için ana belgeye ek olarak stil.css ve menu.js gibi kaynaklar istenir. Ayrıca görüntülenmesi gereken resim kaynakları için istek yapılır. defer kullanıldığında script HTML ayrıştırmasını engellemeden indirilir ve belge ayrıştırıldıktan sonra çalıştırılır. defer kaldırılırsa scriptin konumuna bağlı olarak HTML ayrıştırması duraklayabilir.
-
-DOM, HTML elemanlarının ağaç yapısındaki nesne modelidir. CSSOM, CSS kurallarının tarayıcı tarafından oluşturulan modelidir. Render ağacı, görüntülenecek içerik için DOM ve CSSOM bilgilerinin birleştirilmesiyle oluşturulur.
-
-A10. Git ve npm
-Git'in temel alanları Working Directory, Staging Area ve Repository'dir. Working Directory'den Staging Area'ya git add, Staging Area'dan Repository'ye git commit ile geçilir. Birleştirme çakışması, iki dalın aynı bölümünü farklı şekilde değiştirmesi ve Git'in otomatik olarak karar verememesiyle oluşur. Çakışma işaretleri düzenlenir, ardından git add ve git commit ile merge tamamlanır.
-
-^3.2.1 genel olarak 3.2.1 dahil ve 4.0.0 hariç sürümlere; ~3.2.1 ise 3.2.1 dahil ve 3.3.0 hariç sürümlere izin verir. node_modules depoya eklenmez; klonlayan kişi npm install ile bağımlılıkları yeniden kurar.
-
-
-BÖLÜM B – BİR WEB SİTESİNİN ANATOMİSİ
-
-Seçilen site: ______________________________
-Seçme nedeni: ______________________________
-Ölçüm tarihi: ____ / ____ / 2026
-Ölçüm saati: __________
-
-B1. URL
-Gerçek URL: ______________________________________________
-Şema: __________________
-Ana makine: __________________
-Port: __________________
-Yol: __________________
-Sorgu: __________________
-Parça: __________________
-
-Sorgu parametrelerinin anlamları:
-_________________________________________________________
-_________________________________________________________
-
-B2. DNS
-
-Kullanılan komut:
-nslookup ______________________________
-
-Çıktı:
-[GERÇEK ÇIKTIYI BURAYA YAPIŞTIR]
-
-IPv4 (A) adres sayısı: __________
-IPv6 (AAAA) kaydı: VAR / YOK
-www ve www'siz adres: AYNI / FARKLI
-CNAME: VAR / YOK
-TTL (dig kullanıldıysa): __________
-
-B3. HTTP'den HTTPS'e
-
-Komut:
-curl.exe -I http://____________________________
-
-Çıktı:
-[GERÇEK ÇIKTIYI BURAYA YAPIŞTIR]
-
-Durum kodu: __________
-Location: __________________________________
-
-Komut:
-curl.exe -I https://____________________________
-
-Çıktı:
-[GERÇEK ÇIKTIYI BURAYA YAPIŞTIR]
-
-Strict-Transport-Security: VAR / YOK
-Content-Type: __________________
-Cache-Control: VAR / YOK
-Set-Cookie: VAR / YOK
-
-B4. Network Sekmesi
-
-Toplam istek sayısı: __________
-Aktarılan toplam veri: __________
-Load: __________
-Ana HTML durum kodu: __________
-Ana HTML Content-Type: __________
-HTTP sürümü: __________
-DNS: __________
-Bağlantı: __________
-SSL: __________
-TTFB / Waiting: __________
-Download: __________
-En büyük dosya 1: __________
-En büyük dosya 2: __________
-En büyük dosya 3: __________
-Farklı alan adı sayısı: __________
-
-Cache kapalı / açık karşılaştırması:
-İstek sayısı: __________ / __________
-Aktarılan veri: __________ / __________
-Yüklenme süresi: __________ / __________
-
-Açıklama:
-Önbellek kapatıldığında tarayıcı kaynakları yeniden isteyebilir. Önbellek açık olduğunda geçerli kaynakların yerel önbellekten kullanılması nedeniyle istek ve veri miktarı azalabilir. Gerçek fark, bu bilgisayardaki ölçüm sonuçlarına göre değerlendirilmiştir.
-
-[NETWORK EKRAN GÖRÜNTÜSÜ BURAYA EKLENECEK]
-
-B5. Sertifika ve Çerezler
-
-Sertifika kime verilmiş: ______________________________
-Sertifika otoritesi: ______________________________
-Geçerlilik başlangıcı: ______________________________
-Geçerlilik bitişi: ______________________________
-
-Çerezler:
-1. Ad: __________________  HttpOnly: ____  Secure: ____  SameSite: ____
-2. Ad: __________________  HttpOnly: ____  Secure: ____  SameSite: ____
-3. Ad: __________________  HttpOnly: ____  Secure: ____  SameSite: ____
-
-NOT: Çerez değerleri rapora eklenmemelidir.
-
-BÖLÜM C – GİT, GITHUB VE NPM
-
-C1. Depo ve Yapılandırma
-
-git config --list çıktısının ilgili satırları:
-[GERÇEK ÇIKTI]
-
-.gitignore:
-node_modules/
-.env
-
-C2. npm Projesi
-npm init -y ile proje oluşturuldu.
-dayjs paketi kuruldu.
-npm start betiği package.json içine eklendi.
-
-C3. HTTP Sunucusu
-sunucu.js dosyası projeye eklenmiştir.
-
-Test komutları ve GERÇEK çıktıları:
-1) curl -i http://localhost:3000/
-[ÇIKTI]
-
-2) curl -i http://localhost:3000/hakkimda
-[ÇIKTI]
-
-3) curl -i http://localhost:3000/api/ders
-[ÇIKTI]
-
-4) curl -i http://localhost:3000/api/agep
-[ÇIKTI]
-
-5) curl -i http://localhost:3000/olmayan-sayfa
-[ÇIKTI]
-
-6) curl -i -X POST http://localhost:3000/api/ders
-[ÇIKTI]
-
-C4. Dallanma, Birleştirme ve Çakışma
-
-hakkimda dalı oluşturuldu, geliştirildi ve main dalına birleştirildi.
-
-baslik dalında ana sayfadaki h1 değiştirildi. Main dalında aynı satır farklı biçimde değiştirildi. Birleştirme sırasında conflict oluşturuldu.
-
-Conflict çıktısı:
-[GERÇEK GIT ÇIKTISI]
-
-Conflict işaretlerinin bulunduğu dosya:
-[EKRAN GÖRÜNTÜSÜ / METİN]
-
-Çözüm:
-[ÇAKIŞMAYI NASIL ÇÖZDÜĞÜNÜ KENDİ CÜMLELERİNLE YAZ]
-
-git log --oneline --graph --all:
-[GERÇEK ÇIKTI]
-
-C5. GitHub ve README
-GitHub deposu:
-https://github.com/KULLANICI_ADIN/bmh231-odev1
-
-Commit sayısı: __________
-
-Farklı klasöre klonlama testi:
-git clone ...
-npm install
-npm start
-
-Sonuç:
-[GERÇEK TEST SONUCU]
-
-
-BÖLÜM D – BÜTÜNLEŞTİRME
-
-D1. Localhost ile Gerçek Site Arasındaki Fark
-
-[BU BÖLÜME 400–600 SÖZLÜK, KENDİ ÖLÇÜMLERİNİZİ İÇEREN KARŞILAŞTIRMA METNİ EKLENECEKTİR.]
-
-Localhost Timing: __________ ms
-Gerçek site Timing: __________ ms
-
-Karşılaştırmada URL çözümleme, DNS, TCP, TLS, HTTP istek/yanıt, tarayıcı işleme, Timing değerleri, Content-Type ve HTTPS/yönlendirme/önbellekleme özellikleri ele alınmalıdır.
-
-
-KAYNAKLAR
-
-1. BMH231 Web Programlama – Ödev 1 yönergesi, Yozgat Bozok Üniversitesi.
-2. MDN Web Docs – HTTP ve Web API belgeleri.
-3. Git Documentation – Git kullanıcı kılavuzu.
-4. npm Documentation – npm ve package.json belgeleri.
-5. Day.js Documentation – tarih ve gün işlemleri.
-
-
-YAPAY ZEKÂ KULLANIM BEYANI
-
-Araç: ChatGPT
-Soru/Bölüm: A ve C
-Ne için ve nasıl kullanıldı?: Web programlama kavramlarını anlamak, kodun oluşturulmasına yardımcı olmak ve Git/npm işlemlerini kontrol etmek amacıyla kullanıldı.
-
-Bölüm B ve D'deki ölçümler kendi bilgisayarımda tarafımdan gerçekleştirilmiştir.
+Burada POST, sunucuya veri göndermek için kullanılan HTTP metodudur. Host başlığı isteğin hangi alan adına gönderildiğini belirtir. Content-Type: application/json, gönderilen gövdenin JSON biçiminde olduğunu ifade eder. Content-Length: 16 ise gövdenin UTF-8 kodlamasındaki bayt uzunluğunu belirtir.
+
+HTTP durum tutmayan (stateless) bir protokoldür. Bu nedenle sunucu, önceki isteklere ait bilgileri kendiliğinden hatırlamaz. Oturum takibi gerektiğinde çerezler (cookies) kullanılabilir. Sunucu Set-Cookie başlığıyla tarayıcıya çerez gönderebilir; tarayıcı da sonraki uygun isteklerde Cookie başlığıyla bu bilgiyi sunucuya iletebilir.
+A6) Aşağıdaki durumlar için uygun HTTP durum kodlarını yazınız.
+Durum	HTTP durum kodu	Açıklama
+Yeni bir kaynak başarıyla oluşturuldu.	201 Created	Yeni kaynak oluşturuldu.
+Kullanıcı kimlik doğrulaması yapmadı.	401 Unauthorized	Kimlik doğrulaması gerekli veya başarısız.
+Kullanıcının işlem için yetkisi yok.	403 Forbidden	İstek anlaşıldı ancak erişime izin verilmiyor.
+Kaynak başka bir adrese kalıcı olarak taşındı.	301 Moved Permanently	Kalıcı yönlendirme.
+İstemcinin önbelleğindeki kaynak güncel.	304 Not Modified	Kaynağın yeniden indirilmesi gerekmiyor.
+İstenen kaynak bulunamadı.	404 Not Found	Kaynak mevcut değil veya bulunamadı.
+Sunucuda beklenmeyen bir hata oluştu.	500 Internal Server Error	Genel sunucu hatası.
+Sunucu geçici olarak hizmet veremiyor.	503 Service Unavailable	Sunucu geçici olarak kullanılamıyor.
+
+A7) GET, POST, PUT ve DELETE metotlarını karşılaştırınız.
+HTTP metodu	Güvenli (Safe)	İdempotent	Kullanım amacı
+GET	Evet	Evet	Kaynakları okumak.
+POST	Hayır	Hayır, genel olarak	Veri göndermek veya yeni bir işlem başlatmak.
+PUT	Hayır	Evet	Bir kaynağı belirtilen içerikle oluşturmak veya tamamen güncellemek.
+DELETE	Hayır	Evet	Bir kaynağı silmek.
+
+Güvenli metotlar, sunucudaki kaynakların durumunu değiştirmeyi amaçlamaz. İdempotent bir metot ise aynı istek birden fazla kez gönderildiğinde, sunucunun amaçlanan durumu açısından tek bir istekle aynı sonucu verir.
+
+Örneğin, bir sipariş oluşturmak için kullanılan POST isteği sayfa yenilendiğinde tekrar gönderilirse aynı sipariş ikinci kez oluşturulabilir. Bu nedenle tarayıcı uyarıları veya sunucu tarafında tekrarları engelleyen mekanizmalar önemlidir.
+
+PUT, bir kaynağın temsilini tamamen değiştirmek için kullanılırken PATCH, kaynağın yalnızca belirli alanlarını güncellemek için kullanılır. Örneğin bir kullanıcının yalnızca e-posta adresini değiştirmek PATCH için uygun bir kullanım olabilir.
+A8) HTTPS ne sağlar? Sertifika otoritesi ve TLS nedir?
+HTTPS, HTTP iletişimini TLS (Transport Layer Security) kullanarak korur. Temel olarak üç önemli güvenlik özelliği sağlar:
+1. Gizlilik: İletişim şifrelenerek üçüncü kişilerin verileri kolayca okuması engellenir.
+2. Bütünlük: İletim sırasında verilerin izinsiz değiştirilmesi tespit edilebilir.
+3. Kimlik doğrulama: Tarayıcı, bağlandığı sunucunun kimliğini dijital sertifika üzerinden doğrulayabilir.
+Sertifika otoritesi (CA), dijital sertifikalar düzenleyen ve sertifika sahipliğinin doğrulanmasında rol oynayan güvenilir kuruluştur. Tarayıcı, sunucunun sertifikasını ve sertifika zincirini kontrol eder.
+
+TLS bağlantısında güvenli bir oturum anahtarı oluşturulur. Bu gizli anahtarın açık biçimde ağ üzerinden gönderilmesi gerekmez; anahtar oluşturma ve paylaşma süreci güvenli kriptografik yöntemlerle yürütülür.
+
+Tarayıcıdaki kilit simgesi bağlantının HTTPS ile korunduğunu gösterebilir. Ancak bu simge, sitenin mutlaka dürüst veya güvenilir bir işletmeye ait olduğunu kanıtlamaz. Dolandırıcılık amacı taşıyan siteler de geçerli HTTPS sertifikası kullanabilir.
+A9) Verilen HTML kodu için HTTP isteklerini ve tarayıcının işleyişini açıklayınız.
+Verilen kod:
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<link rel="stylesheet" href="stil.css">
+<script src="menu.js" defer></script>
+</head>
+<body>
+<h1>Projelerim</h1>
+<img src="proje1.png" alt="Proje 1">
+<img src="proje2.png" alt="Proje 2" style="display: none">
+</body>
+</html>
+
+
+Tarayıcı önbelleğinde bu kaynakların bulunmadığı ve kaynakların başarıyla yüklendiği varsayılırsa toplam 5 temel HTTP isteği yapılır:
+1. HTML belgesinin alınması.
+2. stil.css dosyasının alınması.
+3. menu.js JavaScript dosyasının alınması.
+4. proje1.png görselinin alınması.
+5. proje2.png görselinin alınması.
+İkinci görsel display: none ile gizlenmiş olsa da bu durum normalde görsel dosyasının indirilmesini engellemez. Bu nedenle görsel için de istek yapılır. Önbellek kullanımı veya farklı yükleme koşulları toplam istek sayısını değiştirebilir.
+
+defer niteliği, harici JavaScript dosyasının HTML ayrıştırılırken indirilmesine izin verir ve betiğin HTML ayrıştırması tamamlandıktan sonra çalıştırılmasını sağlar. Böylece betiğin HTML'nin ayrıştırılmasını gereksiz yere durdurması önlenir.
+
+Tarayıcı önce HTML'den DOM (Document Object Model) ağacını oluşturur. CSS dosyası ayrıştırılarak CSSOM (CSS Object Model) oluşturulur. DOM ve CSSOM bilgileri birleştirilerek ekranda gösterilecek öğeleri belirleyen render tree oluşturulur. display: none uygulanan öğe render tree içerisinde gösterilmez; ancak HTML'de tanımlanmış görselin indirilmesi bundan ayrı bir işlemdir.
+A10) Git, npm ve sürüm aralıklarını açıklayınız.
+Git, kaynak kodundaki değişiklikleri takip etmek ve farklı geliştirme çalışmalarını yönetmek için kullanılan bir sürüm kontrol sistemidir. Temel olarak üç alan bulunur:
+- Working directory (çalışma dizini): Dosyaların üzerinde çalışılan alan.
+- Staging area (hazırlama alanı): Bir sonraki commit'e eklenecek değişikliklerin seçildiği alan.
+- Repository (depo): Commit geçmişinin tutulduğu alan.
+git add değişiklikleri hazırlama alanına ekler. git commit hazırlanan değişiklikleri yerel depoya kaydeder. git push ise commit'leri uzak depoya gönderir.
+
+İki farklı dalda aynı dosyanın aynı satırları değiştirilirse birleştirme sırasında (merge) çakışma (merge conflict) oluşabilir. Git hangi değişikliğin korunması gerektiğine kendisi karar veremediğinde kullanıcıdan çakışmayı çözmesi beklenir. Kullanıcı doğru içeriği seçtikten sonra dosyayı kaydeder, git add ile hazırlar ve yeni bir commit oluşturarak birleştirmeyi tamamlar.
+
+npm, Node.js projelerinde paketleri yönetmek için kullanılır. package.json dosyasında projenin bağımlılıkları ve betikleri tanımlanabilir.
+- ^3.2.1 sürüm aralığı, 3.2.1 veya daha yeni uyumlu 3.x sürümlerine izin verir; 4.0.0 ve üzerini kapsamaz.
+- ~3.2.1 sürüm aralığı, 3.2.1 veya daha yeni uyumlu 3.2.x sürümlerine izin verir; 3.3.0 ve üzerini kapsamaz.
