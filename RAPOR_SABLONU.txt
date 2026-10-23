@@ -127,3 +127,60 @@ git add değişiklikleri hazırlama alanına ekler. git commit hazırlanan deği
 npm, Node.js projelerinde paketleri yönetmek için kullanılır. package.json dosyasında projenin bağımlılıkları ve betikleri tanımlanabilir.
 - ^3.2.1 sürüm aralığı, 3.2.1 veya daha yeni uyumlu 3.x sürümlerine izin verir; 4.0.0 ve üzerini kapsamaz.
 - ~3.2.1 sürüm aralığı, 3.2.1 veya daha yeni uyumlu 3.2.x sürümlerine izin verir; 3.3.0 ve üzerini kapsamaz.
+
+## BÖLÜM B – UYGULAMALI İNCELEME
+
+### B1) İncelenen URL'nin bileşenleri
+
+İncelenen URL:
+
+https://www.trendyol.com/apple/iphone-18-pro-max-512gb-burgundy-p-1198082362?boutiqueId=61&merchantId=1095240
+
+- **Protokol (şema):** `https`
+- **Alan adı (host):** `www.trendyol.com`
+- **Yol (path):** `/apple/iphone-18-pro-max-512gb-burgundy-p-1198082362`
+- **Sorgu parametreleri (query):** `boutiqueId=61` ve `merchantId=1095240`
+- **Port:** URL'de açıkça belirtilmemiştir; HTTPS için varsayılan port 443'tür.
+- **Fragment:** URL'de bulunmamaktadır.
+
+Bu URL, Trendyol üzerinde bir ürün sayfasına yöneliktir. HTTPS, tarayıcı ile sunucu arasındaki iletişimi TLS aracılığıyla korur. Sorgu parametreleri, ürün sayfasının açılma biçimi veya ilgili satıcı ve kampanya bağlamı gibi bilgilerin iletilmesinde kullanılabilir.
+### B2) DNS sorgulaması
+
+**Kullanılan komut:**
+
+`nslookup trendyol.com`
+
+**Komut çıktısı:**
+
+```text
+Server:  UnKnown
+Address:  fe80::2c81:bfff:fe6b:bc64
+
+Non-authoritative answer:
+Name:    trendyol.com
+Addresses:  104.16.150.136
+            104.16.151.136
+```
+
+**Açıklama:**
+
+`nslookup` komutu, verilen alan adının DNS kayıtlarını sorgulamak için kullanılır. Bu sorguda `trendyol.com` alan adı için `104.16.150.136` ve `104.16.151.136` IPv4 adresleri döndürülmüştür. DNS, alan adlarının IP adreslerine çözümlenmesine yardımcı olur ve tarayıcının ilgili sunucularla bağlantı kurabilmesini sağlar.
+
+Çıktıdaki `Non-authoritative answer` ifadesi, yanıtın alan adının yetkili DNS sunucusundan doğrudan alınmadığını; örneğin bir DNS çözümleyicisinin önbelleğinden döndürülmüş olabileceğini belirtir. `Server: UnKnown` ise kullanılan DNS sunucusunun adının bu sorguda çözümlenemediğini gösterir.
+B4) Network Sekmesi İncelemesi ve ÖlçümleriKullanılan Yöntem ve Koşullar:
+Chrome Geliştirici Araçları (F12) > Network sekmesi açıldı. Protocol sütunu görünür yapıldı. Önce Disable cache seçeneği işaretlenerek (önbellek kapalı) ve ardından işaret kaldırılarak (önbellek açık) Ctrl + R ile Trendyol (https://www.trendyol.com/) sayfası yüklendi ve ölçümler alındı.   1. Önbellek Kapalı (Disable Cache Açık) Ölçüm Sonuçları:Toplam İstek Sayısı: 333 istek (requests)   Aktarılan Toplam Veri (Transferred): 4.6 MB   Sayfanın Yüklenme / Finish Süresi: 20.32 saniye   Kullanılan HTTP Sürümleri / Protokolleri: h2 (HTTP/2) ve h3 (HTTP/3)   2. Önbellek Açık (Disable Cache İşaretli Değil) Ölçüm Sonuçları:Toplam İstek Sayısı: 310 istek (requests)   Aktarılan Toplam Veri (Transferred): 205 kB   Sayfanın Yüklenme / Finish Süresi: 18.63 saniye   Açıklama ve Karşılaştırma:Disable cache seçeneği işaretliyken tarayıcı tüm kaynakları (JavaScript, CSS, görseller vb.) sunucudan sıfırdan indirdiği için aktarılan toplam veri 4.6 MB olmuştur.   Önbellek (cache) aktif hale getirildiğinde ise daha önceden indirilen statik dosyalar yerel diskten/önbellekten kullanıldığı için sunucudan aktarılan toplam veri miktarı 205 kB seviyesine kadar düşmüştür. Bu durum ağ bant genişliğini korur ve sayfa bileşenlerinin yüklenme sürecini hızlandırır.
+B5) Sertifika ve Çerezler İncelemesi
+
+Sertifika Bilgileri (Trendyol):
+- Sertifika Sahibi: DSM GRUP DANIŞMANLIK İLETİŞİM VE SATIŞ TİCARET A.Ş.
+- Düzenleyen Otorite (CA): GlobalSign RSA OV SSL CA 2018
+- Geçerlilik Tarihleri: 19.06.2026 - 04.01.2027
+
+İncelenen Çerezler ve Öznitelikleri (Değerler gizlenmiştir):
+1. __cflb -> Domain: .trendyol.com, Path: /, Secure: Evet, SameSite: Lax
+2. __cf_bm -> Domain: .trendyol.com, Path: /, HttpOnly: Evet, Secure: Evet, SameSite: None
+3. __Secure-next-auth.session-token -> Path: /, HttpOnly: Evet, Secure: Evet
+
+Açıklama: 
+HttpOnly özniteliği, çerezlerin istemci tarafındaki JavaScript (DOM) üzerinden okunmasını engelleyerek XSS (Cross-Site Scripting) saldırılarına karşı koruma sağlar. Secure özniteliği, çerezlerin yalnızca şifrelenmiş HTTPS bağlantıları üzerinden iletilmesini zorunlu kılar. SameSite özniteliği ise siteler arası isteklerde (CSRF korunması) çerezin hangi koşullarda gönderileceğini belirler.
+
